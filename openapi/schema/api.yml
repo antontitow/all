@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  title: demo
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080/rest
+    description: local
+paths:
+  /h:
+    get:
+      summary: get healthcheck
+      tags:
+        - health
+      operationId: healthcheck
+      responses:
+        '200' :
+          description : success responce
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Work"
+        'default' :
+          description: all
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /add:
+    post:
+      tags:
+        - adding
+      operationId: addInfo
+      description: adding info
+      summary: adding operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref : "#/components/schemas/Name"
+      responses:
+        '200':
+          description: allright
+          content:
+            application/json:
+              schema:
+                $ref : "#/components/schemas/ResponseName"
+        'default' :
+          description: all
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    ResponseName:
+      type: object
+      properties:
+        name:
+          type: string
+          example: good
+    Name:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          example: good
+    Error:
+      type: object
+      required:
+        - operationId
+      properties:
+        operationId:
+          type: string
+          example: health
+    Work:
+      type : string
+    Dem:
+      type: object
+      required:
+        - name
+        - status
+      properties:
+        id:
+          type: string
+          example: demostring
+        name:
+          type: string
+          example: demostring
+        status:
+          type: string
+          enum:
+            - new
+            - regular
+            - old
+          description: тип
+          example: demostring
+    Dems:
+      type: array
+      items :
+        $ref : "#/components/schemas/Dem"
+
