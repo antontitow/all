@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - property:
+      name: json_type
+      value: JSONB
+
+  - include:
+      file: v1.0/create-demo.yml
+      relativeToChangelogFile: true
+  - include:
+      file: v1.0/create-demonstrat2.yml
+      relativeToChangelogFile: true
+  - include:
+      file: v1.0/create-demonstrat3.yml
+      relativeToChangelogFile: true

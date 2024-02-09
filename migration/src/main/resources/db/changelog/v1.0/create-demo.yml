@@ -1,0 +1,9 @@
+databaseChangeLog:
+
+  - changeSet:
+     id: create_demo_table
+     author: titov
+     changes:
+       - sqlFile:
+           path: sql/create_demo_table.sql
+           relativeToChangelogFile: true

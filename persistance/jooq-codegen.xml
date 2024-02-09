@@ -1,0 +1,31 @@
+<configuration>
+    <!-- Configure the database connection here -->
+    <jdbc>
+        <driver>org.postgresql.Driver</driver>
+        <url>jdbc:postgresql://localhost:5432/postgres?currentSchema=greygold</url>
+        <user>grey</user>
+        <password>postgrey</password>
+    </jdbc>
+
+    <generator>
+        <name>org.jooq.codegen.JavaGenerator</name>
+        <database>
+            <name>org.jooq.meta.postgres.PostgresDatabase</name>
+            <inputSchema>greygold</inputSchema>
+            <excludes>databasechangelog.*|act*</excludes>
+            <includes>.*</includes>
+        </database>
+
+
+        <!-- Generation flags: See advanced configuration properties -->
+        <generate>
+            <generatedAnnotation>true</generatedAnnotation>
+            <generatedAnnotationType>DETECT_FROM_JDK</generatedAnnotationType>
+        </generate>
+
+        <target>
+            <packageName>ru.tito.jooq</packageName>
+            <directory>src/main/java</directory>
+        </target>
+    </generator>
+</configuration>

@@ -1,0 +1,35 @@
+spring:
+  docker:
+    compose:
+      enabled: false
+      file: env/docker/docker-compose.yml
+      profiles:
+        active:
+          - v1
+      skip:
+        in-tests: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=greygold
+    username: grey
+    password: postgrey
+
+  liquibase:
+    change-log: classpath:db/changelog/common.yml
+    default-schema: greygold
+    user: grey
+    password: postgrey
+  jooq:
+    sql-dialect: postgres
+camunda:
+  bpm:
+    admin-user:
+      id: grey
+      password: postgrey
+    filter:
+      create: All tasks
+    generic-properties:
+      properties:
+        historyTimeToLive: P10000D
+server:
+  servlet:
+    context-path: "/rest"
