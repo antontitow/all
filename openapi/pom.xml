@@ -12,10 +12,15 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>openapi</name>
 	<description>Demo project for Spring Boot</description>
+
 	<properties>
 		<java.version>17</java.version>
 		<swagger.version>2.2.20</swagger.version>
+		<javax.annotation.version>1.3.2</javax.annotation.version>
+		<javax.valiadation-api.version>2.0.1.Final</javax.valiadation-api.version>
+		<jackson.databind.nullable.version>0.2.6</jackson.databind.nullable.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -29,7 +34,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations -->
 		<dependency>
@@ -37,6 +41,45 @@
 			<artifactId>swagger-annotations</artifactId>
 			<version>${swagger.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-models -->
+		<dependency>
+			<groupId>io.swagger.core.v3</groupId>
+			<artifactId>swagger-models</artifactId>
+			<version>2.2.20</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-core -->
+		<dependency>
+			<groupId>io.swagger.core.v3</groupId>
+			<artifactId>swagger-core</artifactId>
+			<version>2.2.20</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>${javax.annotation.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>${javax.valiadation-api.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.openapitools/jackson-databind-nullable -->
+		<dependency>
+			<groupId>org.openapitools</groupId>
+			<artifactId>jackson-databind-nullable</artifactId>
+			<version>${jackson.databind.nullable.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 
 	</dependencies>
 
